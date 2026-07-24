@@ -1,5 +1,6 @@
 import serial
 import csv
+import time
 
 ser = serial.Serial()
 ser.baudrate = 9600
@@ -13,7 +14,7 @@ with serial.Serial('COM3', 9600, timeout=5) as ser: # Boucle pour récuperer les
         with open('data.csv', 'a', newline='') as f:
             if ligne: # Vérifie que 'ligne' n'est pas vide
                 writer = csv.writer(f)
-                writer.writerow(valeurs)
+                writer.writerow([time.strftime('%X %x')] + valeurs)
                 print("Données envoyer")
 
 ser.close()
