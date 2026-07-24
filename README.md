@@ -2,6 +2,8 @@
 
 ## Fonctionalité :
 - Lecture de température, luminosité, altitude, pression
+- Led rouge qui s'active lorsque la température dépasse 30°C
+- Led bleu qui s'active lorsque la luminosité dépasse 300 lux
 
 ## Capteurs :
 - BH1750 (Luminosité en lux)
