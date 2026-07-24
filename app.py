@@ -10,7 +10,7 @@ from streamlit_autorefresh import st_autorefresh
 
 st.set_page_config(
     page_title="Sky Reader",
-    page_icon="assets/skyreader.png",
+    page_icon="skyreader.png",
     layout="wide"
 )
 
