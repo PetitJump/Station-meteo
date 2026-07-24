@@ -2,8 +2,9 @@
 
 ## Fonctionalité :
 - Lecture de température, luminosité, altitude, pression
-- Led rouge qui s'active lorsque la température dépasse 30°C
+- Led rouge qui clignote lorsque la température dépasse 30°C
 - Led bleu qui s'active lorsque la luminosité dépasse 300 lux
+- Panneau led 8x8 qui montre la dizaine de la température (Exemple : 24C° = 2)
 
 ## Capteurs :
 - BH1750 (Luminosité en lux)
