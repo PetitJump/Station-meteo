@@ -1,7 +1,7 @@
 import streamlit as st
 import pandas as pd
 import plotly.express as px
-
+from streamlit_autorefresh import st_autorefresh
 
 # -------------------------
 # Configuration
@@ -18,21 +18,41 @@ st.title("🌦️ Une Station Météo")
 
 st.write(
     "Visualisation des données météorologiques Arduino"
+
+)
+st_autorefresh(
+    interval=5000,   # milliseconds
+    key="data_refresh"
+)
+
+refresh_time = st.sidebar.slider(
+    "Fréquence de mise à jour (secondes)",
+    1,
+    30,
+    5
 )
 
 
+st_autorefresh(
+    interval=refresh_time*1000,
+    key="refresh"
+)
+
+st.caption(
+    f"Dernière actualisation : {pd.Timestamp.now().strftime('%H:%M:%S')}"
+)
 # -------------------------
 # Load CSV
 # -------------------------
 
-FILE = "data.csv"
+FILE = "mesures.csv"
 
 
 try:
     df = pd.read_csv(FILE)
 
 except FileNotFoundError:
-    st.error("Le fichier data.csv est introuvable")
+    st.error("Le fichier mesures.csv est introuvable")
     st.stop()
 
 
