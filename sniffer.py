@@ -14,6 +14,6 @@ with serial.Serial('COM3', 9600, timeout=5) as ser: # Boucle pour récuperer les
             if ligne: # Vérifie que 'ligne' n'est pas vide
                 writer = csv.writer(f)
                 writer.writerow(valeurs)
-                print("Fait")
+                print("Données envoyer")
 
 ser.close()
