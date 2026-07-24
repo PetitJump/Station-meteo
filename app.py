@@ -41,18 +41,18 @@ st_autorefresh(
 st.caption(
     f"Dernière actualisation : {pd.Timestamp.now().strftime('%H:%M:%S')}"
 )
-# -------------------------
+# ------------------------
 # Load CSV
 # -------------------------
 
-FILE = "mesures.csv"
+FILE = "data.csv"
 
 
 try:
     df = pd.read_csv(FILE)
 
 except FileNotFoundError:
-    st.error("Le fichier mesures.csv est introuvable")
+    st.error("Le fichier data.csv est introuvable")
     st.stop()
 
 
